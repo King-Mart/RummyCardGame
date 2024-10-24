@@ -60,6 +60,3 @@ if is_rigorous(b):
 else:
     print("\nThis list has no * but is not rigorous and it has "+str(len(b))+" characters.")
      
-# for i in range(3):
-#     f = open(f"a4_Q{i+1}_300403489.py", "x")
-#     f.close()
