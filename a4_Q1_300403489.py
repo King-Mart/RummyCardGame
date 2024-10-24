@@ -22,7 +22,7 @@ def number_divisible(lst : list[int], denominator :int):
     return divisible_count
 
 
-print(number_divisible(raw_input, denominator))
+print(f"The number of numbers divisible by {denominator} in the list you've inputed is {number_divisible(raw_input, denominator)}")
 
 
 
