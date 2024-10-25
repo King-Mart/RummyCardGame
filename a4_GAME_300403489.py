@@ -59,7 +59,8 @@ def remove_pairs(l):
     '''
      (list of str)->list of str
 
-     Returns a copy of list l where all the pairs from l are removed AND
+     Returns a copy of list l where all the pairs from l are removed AND ||| Shouldn't the list be ordered like all card games, that is how people play cards usually.
+       edit, I understand we have to shuffle so the opponent cant strategize his picks. I think shuffling can be handled in a separate function as it is not necessary here
      the elements of the new list shuffled
 
      Precondition: elements of l are cards represented as strings described above
@@ -119,9 +120,10 @@ def play_game():
      print("Welcome to my card game!")
      print("Your current deck of cards is:")
      print_deck(human)
-     print("Do not worry. I cannot see the order of your cards")
+     print("Do not worry. I cannot see the order of your cards. I don't need to see them to win!")
 
-     print("Now discard all the pairs from your deck. I will do the same.")
+     #Since the player isn't discarding the cards himself, it is incoherent to tell him to discard them
+     print("Now I will discard all the pairs from your deck (without looking). I will do the same for me.")
      wait_for_player()
      
      dealer=remove_pairs(dealer)
