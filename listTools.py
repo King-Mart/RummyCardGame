@@ -26,11 +26,15 @@ def listinput(verificator , sep=" "):
     while bad_input_error:
         raw_input = input("Please input a list of numbers separated by space : \n").strip().split(sep)
         try:
-            raw_input = [verificator(i) for i in raw_input]
+            if raw_input[0]:
+                raw_input = [verificator(i)  for i in raw_input]
+                
+            else:
+                raw_input = []
             bad_input_error = False
             return raw_input
-        except ValueError:
-            print("Invalid input. Please input numbers separated by spaces.")
+        except ValueError as e:
+            print(f"Invalid input. Please input numbers separated by spaces.\n pythonic gibberish here : \n{repr(e)}")
 
 def int_verifier(input):
 
@@ -50,8 +54,11 @@ def int_verifier(input):
         ValueError: If the given input cannot be converted into an integer.
     """
 
-    
-    return int(input)
+    try:
+        return int(input)
+    #Workaround to floats not turned to int from strings
+    except ValueError:
+        return int(float(input))
 
 def is_bigger(n1, n2):
     """
