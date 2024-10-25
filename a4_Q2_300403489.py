@@ -1,14 +1,18 @@
 import listTools
 
-lstInput = listTools.listinput(listTools.int_verifier)
 
-def run_finder(lst):
-    '''This function finds if the received list is a run ( a list containing )
-       It works by checking if each pair of elements are different
-    param:
+
+def run_finder(lst : list[int]):
+    """
+    Finds if the received list is a run ( a list containing consecutive identical integers)
+    
+    Args:
         lst (list): The list to be checked
 
-    returns:
-        bool: True if the list is a run, False otherwise'''
+    Returns:
+        bool: True if the list is a run, False otherwise
+    """
+    return listTools.comparePairLst(lst, lambda x, y: x == y)
 
-    return listTools.comparePairLst(lst, lambda x, y: x != y)
+
+print(run_finder(listTools.listinput(listTools.int_verifier)))
