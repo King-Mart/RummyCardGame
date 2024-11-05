@@ -12,21 +12,15 @@ cards = {
     'H': { 1: 'A♥', 2: '2♥', 3: '3♥', 4: '4♥', 5: '5♥', 6: '6♥', 7: '7♥', 8: '8♥', 9: '9♥', 10: '10♥', 11: 'J♥', 12: 'Q♥', 13: 'K♥'},
     'S': { 1: 'A♠', 2: '2♠', 3: '3♠', 4: '4♠', 5: '5♠', 6: '6♠', 7: '7♠', 8: '8♠', 9: '9♠', 10: '10♠', 11: 'J♠', 12: 'Q♠', 13: 'K♠'}
 }
-inverted_cards = {}
-
-for symbol in cards:
-    for rank in cards[symbol]:
-        inverted_cards[rank] = symbol
-
-print(inverted_cards)
 
 # print the deck
 sorted_deck = []
 for i in range(13):
     for symbol in cards:
         sorted_deck.append((symbol, i+1))
-print(" ".join(card_to_txt(card) for card in sorted_deck))
-print(sorted_deck)
+#Pop a random queen 
+missing_queen = sorted_deck.pop(random.randrange(44,48))
+
 
 
 #Now split the cards equally between both players
